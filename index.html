@@ -1,11 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cat">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formularios</title>
+  <meta charset="UTF-8">
+  <title>Formulari d'inscripcio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6f8;
+      color: #222;
+      margin: 0;
+      padding: 20px;
+    }
+    .pagina {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .capcalera {
+      background: #e6edf8;
+      border-radius: 14px;
+      text-align: center;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    .capcalera h1 { font-size: 20px; 
+        margin: 6px 0; 
+    }
+
+    .capcalera p { font-size: 13px; 
+        color: #667; 
+        margin: 0; 
+    }
+
+    .targeta {
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .targeta h2 { font-size: 16px; 
+        margin: 0 0 12px 0; 
+    }
+
+    label { 
+        display: block; 
+        font-size: 13px; 
+        color: #555; 
+        margin: 10px 4px 0; }
+
+    .camp {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 16px;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    textarea.camp { 
+        border-radius: 14px; 
+        height: 90px; 
+    }
+
+    .opcio { display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    font-size: 15px; 
+    color: #222; 
+    margin: 8px 0; 
+    }
+
+    .escala { 
+        display: flex; 
+        justify-content: space-between; 
+        font-size: 12px; 
+    }
+
+    .botons { 
+        display: flex; 
+        gap: 10px; 
+        margin-top: 16px; 
+    }
+
+    .boto-enviar {
+      flex: 1;
+      background: #2f6fed;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 15px;
+    }
+    
+    .boto-netejar{ 
+    padding: 12px 18px; 
+    }
+
+    .nota { text-align: center; 
+    font-size: 12px; 
+    color: #666; 
+    margin-top: 12px; 
+    }
+
+  </style>
 </head>
 <body>
-    
+  <div class="pagina">
+
+    <div class="capcalera">
+      <h1>Formulari d'inscripció</h1>
+      <p>Activitats extraescolars · Curs 2026–2027</p>
+    </div>
+
+    <form>
+
+      <!-- 1. Dades personals -->
+      <div class="targeta">
+        <h2>1. Dades personals</h2>
+
+        <div class="fila">
+          <div>
+            <label for="nom">Nom *</label>
+            <input class="camp" type="text" id="nom" placeholder="Escriu el teu nom">
+          </div>
+          <div>
+            <label for="cognoms">Cognoms *</label>
+            <input class="camp" type="text" id="cognom" placeholder="Escriu els cognoms">
+          </div>
+        </div>
+
+        <label for="correu">Correu electrònic *</label>
+        <input class="camp" type="text" id="correu" placeholder="exemple@correu.com">
+
+        <div class="fila">
+          <div>
+            <label for="telefon">Telèfon</label>
+            <input class="camp" type="text" id="telefon" placeholder="600 000 000">
+          </div>
+          <div>
+            <label for="naixement">Data de naixement *</label>
+            <input class="camp" type="text" id="naixement">
+          </div>
+        </div>
+
+        <label for="contrasenya">Contrasenya *</label>
+        <input class="camp" type="text" id="contrasenya" placeholder="Introdueix una contrasenya">
+      </div>
+
+      <!-- 2. Informació acadèmica -->
+      <div class="targeta">
+        <h2>2. Informació acadèmica</h2>
+
+        <label for="curs">Curs actual *</label>
+        <select class="camp" id="curs">
+          <option value="">Selecciona un curs</option>
+        </select>
+
+        <label>Activitat que vols realitzar *</label>
+        <div class="opcio"><input type="radio" name="activitat" id="act1"> <span>Programació</span></div>
+        <div class="opcio"><input type="radio" name="activitat" id="act2"> <span>Robòtica</span></div>
+        <div class="opcio"><input type="radio" name="activitat" id="act3"> <span>Disseny web</span></div>
+        <div class="opcio"><input type="radio" name="activitat" id="act4"> <span>Esports</span></div>
+
+        <label>Dies disponibles</label>
+        <div class="opcio"><input type="radio" name="dies" id="d1"> <span>Dilluns</span></div>
+        <div class="opcio"><input type="radio" name="dies" id="d2"> <span>Dimarts</span></div>
+        <div class="opcio"><input type="radio" name="dies" id="d3"> <span>Dimecres</span></div>
+        <div class="opcio"><input type="radio" name="dies" id="d4"> <span>Dijous</span></div>
+        <div class="opcio"><input type="radio" name="dies" id="d5"> <span>Divendres</span></div>
+      </div>
+
+      <!-- 3. Informació -->
+      <div class="targeta">
+        <h2>3. Informació addicional</h2>
+
+        <label for="color">Color preferit per a la teva identificació</label>
+        <input class="camp" type="text" id="color" value="#4285db">
+
+        <label for="nivell">Nivell d'experiència (de 0 a 10)</label>
+        <input type="range" id="nivell" min="0" max="100" value="5">
+        <div class="escala"><span>0</span><span>5</span><span>10</span></div>
+
+        <label for="comentaris">Comentaris o observacions</label>
+        <textarea class="camp" id="comentaris" placeholder="Escriu aquí els teus comentaris..."></textarea>
+
+        <label for="document">Adjunta un document (opcional)</label>
+        <input class="camp" type="text" id="document">
+      </div>
+
+      <div class="opcio">
+        <input type="radio" id="privacitat">
+        <span>Accepto la política de privacitat i les condicions d'inscripció. *</span>
+      </div>
+
+      <div class="botons">
+        <button class="boto-enviar" type="reset">Enviar inscripció</button>
+        <button class="boto-netejar" type="submit">Netejar</button>
+      </div>
+
+      <p class="nota">* Camps obligatoris</p>
+    </form>
+    </div>
 </body>
 </html>
